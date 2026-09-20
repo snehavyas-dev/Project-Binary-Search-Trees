@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Search Tree Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Project</p>
+          <h1>Binary Search Tree </h1>
+          <p class="subtitle">
+            A balanced BST implementation with insertion, deletion, traversal, and rebalancing.
+          </p>
+          <div class="hero__actions">
+            <button id="generateTree" class="primary-btn">Generate Tree</button>
+            <button id="rebalanceTree" class="secondary-btn">Rebalance</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="panel controls">
+          <h2>Controls</h2>
+
+          <div class="control-group">
+            <label for="inputValue">Insert value</label>
+            <div class="input-row">
+              <input id="inputValue" type="number" min="0" max="999" placeholder="e.g. 42" />
+              <button id="addValue" class="primary-btn small">Add</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="deleteValue">Delete value</label>
+            <div class="input-row">
+              <input id="deleteValue" type="number" min="0" max="999" placeholder="e.g. 13" />
+              <button id="deleteValueBtn" class="danger-btn small">Delete</button>
+            </div>
+          </div>
+
+          <div class="status-box">
+            <p>
+              Balance status:
+              <span id="balanceStatus" class="status-pill balanced">Balanced</span>
+            </p>
+          </div>
+        </section>
+
+        <section class="panel output">
+          <h2>Tree Output</h2>
+          <div class="output-grid">
+            <div>
+              <h3>Level Order</h3>
+              <ul id="levelOrder" class="output-list"></ul>
+            </div>
+            <div>
+              <h3>Pre Order</h3>
+              <ul id="preOrder" class="output-list"></ul>
+            </div>
+            <div>
+              <h3>Post Order</h3>
+              <ul id="postOrder" class="output-list"></ul>
+            </div>
+            <div>
+              <h3>In Order</h3>
+              <ul id="inOrder" class="output-list"></ul>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <section class="panel tree-panel">
+        <h2>Tree Visualization</h2>
+        <div id="treeContainer" class="tree-container" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <script src="bst.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
